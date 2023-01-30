@@ -172,6 +172,13 @@
       },
       "url": "https://packages.unity.com"
     },
+    "studio.tg.purchased-assets-explorer": {
+      "version": "git@github.com:ThunderGamesStudio/PurchasedAssetsExplorer.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "b55cde67b18781102d94798ca78422ca5a73d67a"
+    },
     "com.unity.modules.ai": {
       "version": "1.0.0",
       "depth": 0,

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Others
 {
-    public class DoorLight : MonoBehaviour
+    public class Blinker : MonoBehaviour
     {
         [SerializeField] private Color m_ColorA;
         [ColorUsage(true, true)] [SerializeField] private Color m_ColorB;

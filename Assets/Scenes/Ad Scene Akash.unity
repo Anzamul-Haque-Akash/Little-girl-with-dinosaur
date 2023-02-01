@@ -1070,7 +1070,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1527882530
 GameObject:
@@ -1428,75 +1428,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20819582176cd461483e8f52c080126c, type: 3}
---- !u!1001 &3863827360669459274
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5500795019348506294, guid: 5ac49c8ed83e948d2bf19f507b27536a,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 5500795019348506294, guid: 5ac49c8ed83e948d2bf19f507b27536a,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 115.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 5500795019348506294, guid: 5ac49c8ed83e948d2bf19f507b27536a,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.189
-      objectReference: {fileID: 0}
-    - target: {fileID: 5500795019348506294, guid: 5ac49c8ed83e948d2bf19f507b27536a,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 95
-      objectReference: {fileID: 0}
-    - target: {fileID: 5500795019348506294, guid: 5ac49c8ed83e948d2bf19f507b27536a,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071072
-      objectReference: {fileID: 0}
-    - target: {fileID: 5500795019348506294, guid: 5ac49c8ed83e948d2bf19f507b27536a,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5500795019348506294, guid: 5ac49c8ed83e948d2bf19f507b27536a,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.7071064
-      objectReference: {fileID: 0}
-    - target: {fileID: 5500795019348506294, guid: 5ac49c8ed83e948d2bf19f507b27536a,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5500795019348506294, guid: 5ac49c8ed83e948d2bf19f507b27536a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5500795019348506294, guid: 5ac49c8ed83e948d2bf19f507b27536a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 5500795019348506294, guid: 5ac49c8ed83e948d2bf19f507b27536a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5500795019348754064, guid: 5ac49c8ed83e948d2bf19f507b27536a,
-        type: 3}
-      propertyPath: m_Name
-      value: Tyrannosaurus Rex
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 5ac49c8ed83e948d2bf19f507b27536a, type: 3}
 --- !u!23 &7495043674873547241
 MeshRenderer:
   m_ObjectHideFlags: 0

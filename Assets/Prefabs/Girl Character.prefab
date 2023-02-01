@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &483063810
 Transform:
   m_ObjectHideFlags: 0
@@ -113,7 +113,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.0000018268989, y: 0.07599958, z: 0.0000011315569}
+  m_ConnectedAnchor: {x: 0.0000018259673, y: 0.000000029802322, z: 0.0000010083895}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 0
@@ -206,7 +206,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1541463035411224286}
-  - component: {fileID: 5724634401970178982}
+  - component: {fileID: 2187088450419484043}
   m_Layer: 0
   m_Name: Girl Character
   m_TagString: Untagged
@@ -231,7 +231,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5724634401970178982
+--- !u!114 &2187088450419484043
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -240,7 +240,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6606614672936434575}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b238c12112c40539b8a73d3f39d2956, type: 3}
+  m_Script: {fileID: 11500000, guid: b9ecf57e7f26a4252abee1e2642346e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &4102555690494471591
@@ -313,7 +313,7 @@ PrefabInstance:
     - target: {fileID: 5488623579869934838, guid: d7ad4551cb92f44f0974dbdaa9870c83,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5488623579869934838, guid: d7ad4551cb92f44f0974dbdaa9870c83,
         type: 3}

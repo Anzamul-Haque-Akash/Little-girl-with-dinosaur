@@ -12,12 +12,10 @@ public class NPC : MonoBehaviour
         _navMesh = GetComponent<NavMeshAgent>();
         _animator = GetComponentInChildren<Animator>();
     }
-
     private void Start()
     {
         GoToAPoint();
     }
-
     private void GoToAPoint()
     {
         _navMesh.SetDestination(m_TargetPoint.position);

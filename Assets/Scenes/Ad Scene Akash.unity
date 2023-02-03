@@ -1653,6 +1653,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 889359256, guid: 3fa978ce465934d8182b44a56a56af30, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6292427238343257145, guid: 3fa978ce465934d8182b44a56a56af30,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.27058825
+      objectReference: {fileID: 0}
+    - target: {fileID: 6292427238901302030, guid: 3fa978ce465934d8182b44a56a56af30,
+        type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6292427239888141212, guid: 3fa978ce465934d8182b44a56a56af30,
         type: 3}
       propertyPath: m_RootOrder
@@ -1713,7 +1727,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI Stuff
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6292427238343257145, guid: 3fa978ce465934d8182b44a56a56af30, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3fa978ce465934d8182b44a56a56af30, type: 3}
 --- !u!1001 &6355646205738444091
 PrefabInstance:

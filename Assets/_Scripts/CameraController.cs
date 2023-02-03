@@ -1,8 +1,6 @@
-using System;
 using Cinemachine;
 using Sirenix.OdinInspector;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class CameraController : MonoBehaviour
 {
@@ -11,11 +9,11 @@ public class CameraController : MonoBehaviour
 
     [SerializeField, BoxGroup("Cinemachine VCams")]
     private CinemachineVirtualCamera _TRexCam;
-    [FormerlySerializedAs("_EatingCam")] [SerializeField, BoxGroup("Cinemachine VCams")]
+    [SerializeField, BoxGroup("Cinemachine VCams")]
     private CinemachineVirtualCamera m_EatingCam;
     
-    [FormerlySerializedAs("_EatingCam")] [SerializeField, BoxGroup("Cinemachine VCams")]
-    private CinemachineVirtualCamera m_ChooseOptionsCam;
+    [SerializeField, BoxGroup("Cinemachine VCams")]
+    private CinemachineVirtualCamera m_PlayerCam;
 
 
     private CinemachineVirtualCamera _vCam;
@@ -45,5 +43,10 @@ public class CameraController : MonoBehaviour
     public void SwitchToEatingCam()
     {
         SwitchCam(m_EatingCam);
+    }
+
+    public void SwitchToPlayerCam()
+    {
+        SwitchCam(m_PlayerCam);
     }
 }

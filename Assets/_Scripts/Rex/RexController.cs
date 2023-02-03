@@ -1,3 +1,4 @@
+using _Scripts.Player;
 using DG.Tweening;
 using JetBrains.Annotations;
 using Sirenix.OdinInspector;
@@ -17,12 +18,14 @@ namespace Rex
         private static readonly int Eat2 = Animator.StringToHash("Eat_2");
 
         private GirlController _girlController;
+        private PlayerController _playerController;
 
         private void Awake()
         {
             _agent = GetComponent<NavMeshAgent>();
             _animator = GetComponent<Animator>();
             _girlController = FindObjectOfType<GirlController>();
+            _playerController = FindObjectOfType<PlayerController>();
         }
 
         private void Start()
@@ -60,6 +63,11 @@ namespace Rex
             sequence.AppendCallback(delegate
             {
                 _animator.SetTrigger(Eat2);
+            });
+            sequence.AppendInterval(1f);
+            sequence.AppendCallback(delegate
+            {
+                CameraController.Instance.SwitchToPlayerCam();
             });
         }
 

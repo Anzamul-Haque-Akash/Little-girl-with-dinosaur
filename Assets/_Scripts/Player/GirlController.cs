@@ -17,6 +17,7 @@ public class GirlController : MonoBehaviour
     
     private static readonly int SeatPosition = Animator.StringToHash("SeatPosition");
     private static readonly int InMouth = Animator.StringToHash("InMouth");
+    public static readonly int Toss = Animator.StringToHash("Toss");
 
     public void ActiveRagdoll(bool state)
     {
@@ -55,5 +56,10 @@ public class GirlController : MonoBehaviour
         {
             _animator.SetTrigger(InMouth);
         });
+    }
+
+    public void Tossed()
+    {
+       _animator.SetTrigger(Toss);
     }
 }

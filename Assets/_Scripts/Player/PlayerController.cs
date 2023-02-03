@@ -40,11 +40,6 @@ namespace _Scripts.Player
             {
                 CameraController.Instance.SwitchToEatingCam();
             });
-
-            DOVirtual.DelayedCall(3f, delegate
-            {
-                //m_Teddy.GetComponent<Rigidbody>().isKinematic = true;
-            });
         }
 
         private void Update()

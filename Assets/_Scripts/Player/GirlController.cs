@@ -10,6 +10,7 @@ public class GirlController : MonoBehaviour
     [SerializeField, BoxGroup("Target Points")] private Transform m_TargetPoint1;
     [SerializeField] private Transform m_BoneTarget;
     [SerializeField] private Transform m_GirlMesh;
+    [SerializeField] private Rigidbody m_Spine;
     private Animator _animator;
     
     private List<Rigidbody> rigidbodies;
@@ -49,21 +50,9 @@ public class GirlController : MonoBehaviour
         transform.parent = parent;
         transform.localPosition = Vector3.zero;
         transform.localRotation = quaternion.identity;
-
-        // ActiveRagdoll(false);
-        // _animator.enabled = false;
-        // transform.parent = parent;
-        //
-        // DOVirtual.Float(0f, 1f, 0.5f, delegate(float value)
-        // {
-        //     transform.localPosition = Vector3.Lerp(transform.localPosition, Vector3.zero, value);
-        // });
-        //
-        // DOVirtual.DelayedCall(1f, delegate
-        // {
-        //     m_BoneTarget.parent = parent;
-        //     m_BoneTarget.localPosition = Vector3.zero;
-        //     ActiveRagdoll(true);
-        // });
+        DOVirtual.DelayedCall(.4f, delegate
+        {
+            //_animator.enabled = false;
+        });
     }
 }

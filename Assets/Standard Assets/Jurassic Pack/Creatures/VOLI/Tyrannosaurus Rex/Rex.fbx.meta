@@ -987,7 +987,7 @@ ModelImporter:
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
-    resampleCurves: 0
+    resampleCurves: 1
     optimizeGameObjects: 1
     removeConstantScaleCurves: 0
     motionNodeName: 

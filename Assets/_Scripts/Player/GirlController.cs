@@ -16,6 +16,7 @@ public class GirlController : MonoBehaviour
     private List<Rigidbody> rigidbodies;
     
     private static readonly int SeatPosition = Animator.StringToHash("SeatPosition");
+    private static readonly int InMouth = Animator.StringToHash("InMouth");
 
     public void ActiveRagdoll(bool state)
     {
@@ -52,7 +53,7 @@ public class GirlController : MonoBehaviour
         transform.localRotation = quaternion.identity;
         DOVirtual.DelayedCall(.4f, delegate
         {
-            //_animator.enabled = false;
+            _animator.SetTrigger(InMouth);
         });
     }
 }

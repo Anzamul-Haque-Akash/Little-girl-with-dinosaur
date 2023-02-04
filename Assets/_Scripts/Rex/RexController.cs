@@ -55,7 +55,7 @@ using UnityEngine.AI;
             {
                 _girlController.GetEatByDino(m_MouthTrasform);
             });
-            sequence.AppendInterval(.6f);
+            sequence.AppendInterval(1.2f);
             sequence.AppendCallback(delegate
             {
                 _animator.SetTrigger(Idle);

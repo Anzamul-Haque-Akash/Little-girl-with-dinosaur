@@ -1349,7 +1349,7 @@ ModelImporter:
       name: Rex|EatA
       takeName: Rex|EatA
       internalID: 7400000
-      firstFrame: 0
+      firstFrame: 6
       lastFrame: 29
       wrapMode: 0
       orientationOffsetY: 0

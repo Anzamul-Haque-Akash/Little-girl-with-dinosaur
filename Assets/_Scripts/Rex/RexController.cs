@@ -12,8 +12,8 @@ using UnityEngine.AI;
         private NavMeshAgent _agent;
         private static readonly int Roar = Animator.StringToHash("Roar");
         private static readonly int Eat1 = Animator.StringToHash("Eat_1");
+        private static readonly int Idle = Animator.StringToHash("Idle");
         private static readonly int Eat2 = Animator.StringToHash("Eat_2");
-        private static readonly int Eat3 = Animator.StringToHash("Eat_3");
 
         private GirlController _girlController;
 
@@ -33,32 +33,32 @@ using UnityEngine.AI;
         {
             Sequence sequence = DOTween.Sequence();
 
-            sequence.AppendCallback(delegate
-            {
-                _agent.SetDestination(m_FirstTargetPoint.position);
-            });
-
-            float waitDuration = (m_FirstTargetPoint.position - transform.position).magnitude / _agent.speed - 0.35f;
-            sequence.AppendInterval(waitDuration);
+            // sequence.AppendCallback(delegate
+            // {
+            //     _agent.SetDestination(m_FirstTargetPoint.position);
+            // });
+            //
+            // float waitDuration = (m_FirstTargetPoint.position - transform.position).magnitude / _agent.speed - 0.35f;
+            // sequence.AppendInterval(waitDuration);
             sequence.AppendCallback(delegate
             {
                 _animator.SetTrigger(Roar);
-                CameraController.Instance.SwitchToEatingCam();
+                //CameraController.Instance.SwitchToEatingCam();
             });
-            sequence.AppendInterval(3.2f);
+            sequence.AppendInterval(2f);
             sequence.AppendCallback(delegate
             {
                 _animator.SetTrigger(Eat1);
             });
-            sequence.AppendInterval(.5f);
+            sequence.AppendInterval(.3f);
             sequence.AppendCallback(delegate
             {
                 _girlController.GetEatByDino(m_MouthTrasform);
             });
-            sequence.AppendInterval(.3f);
+            sequence.AppendInterval(.6f);
             sequence.AppendCallback(delegate
             {
-                _animator.SetTrigger(Eat2);
+                _animator.SetTrigger(Idle);
             });
             sequence.AppendInterval(1f);
             sequence.AppendCallback(delegate
@@ -75,7 +75,7 @@ using UnityEngine.AI;
 
         public void Eat()
         {
-            _animator.SetTrigger(Eat3);
+            _animator.SetTrigger(Eat2);
             _girlController.Tossed();
         }
     }

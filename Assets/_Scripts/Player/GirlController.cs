@@ -18,6 +18,7 @@ public class GirlController : MonoBehaviour
     private static readonly int SeatPosition = Animator.StringToHash("SeatPosition");
     private static readonly int InMouth = Animator.StringToHash("InMouth");
     public static readonly int Toss = Animator.StringToHash("Toss");
+    public static readonly int LookUp = Animator.StringToHash("LookUp");
 
     public void ActiveRagdoll(bool state)
     {
@@ -43,7 +44,7 @@ public class GirlController : MonoBehaviour
     private void GirlSequence()
     {
         Sequence sequence = DOTween.Sequence();
-        sequence.Append(transform.DOMove(m_TargetPoint1.position, 3f).SetEase(Ease.Linear));
+        sequence.Append(transform.DOMove(m_TargetPoint1.position, 2.3f).SetEase(Ease.Linear));
     }
 
     public void GetEatByDino(Transform parent)

@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &539164344
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 539164345}
+  m_Layer: 0
+  m_Name: Throw Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &539164345
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 539164344}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.4300003, y: 3.1039996, z: 16.529999}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3538300183057843183}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &827914173
 GameObject:
   m_ObjectHideFlags: 0
@@ -63,6 +94,7 @@ Transform:
   - {fileID: 5816370532696367546}
   - {fileID: 3565717561892137325}
   - {fileID: 3959016217576557492}
+  - {fileID: 539164345}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1673,6 +1705,11 @@ PrefabInstance:
       propertyPath: m_Teddy
       value: 
       objectReference: {fileID: 5816370532696367546}
+    - target: {fileID: 8220638424154448698, guid: 70d7b8560b25d4cc3921ccfef82e4ff0,
+        type: 3}
+      propertyPath: m_ThrowPoint
+      value: 
+      objectReference: {fileID: 539164345}
     - target: {fileID: 8247203140386071018, guid: 70d7b8560b25d4cc3921ccfef82e4ff0,
         type: 3}
       propertyPath: m_LocalPosition.x

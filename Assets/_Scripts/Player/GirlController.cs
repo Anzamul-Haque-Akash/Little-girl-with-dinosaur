@@ -8,27 +8,14 @@ using UnityEngine;
 public class GirlController : MonoBehaviour
 {
     [SerializeField, BoxGroup("Target Points")] private Transform m_TargetPoint1;
-    [SerializeField] private Transform m_BoneTarget;
     [SerializeField] private Transform m_GirlMesh;
     [SerializeField] private Rigidbody m_Spine;
     private Animator _animator;
     
-    private List<Rigidbody> rigidbodies;
-    
     private static readonly int SeatPosition = Animator.StringToHash("SeatPosition");
     private static readonly int InMouth = Animator.StringToHash("InMouth");
     public static readonly int Toss = Animator.StringToHash("Toss");
-    public static readonly int LookUp = Animator.StringToHash("LookUp");
-
-    public void ActiveRagdoll(bool state)
-    {
-        _animator.enabled = !state;
-            
-        foreach (Rigidbody r in rigidbodies)
-        {
-            r.isKinematic = !state;
-        }
-    }
+    public static readonly int Crawl = Animator.StringToHash("Crawl");
 
     private void Awake()
     {
@@ -37,13 +24,17 @@ public class GirlController : MonoBehaviour
 
     private void Start()
     {
-        rigidbodies = m_GirlMesh.GetComponentsInChildren<Rigidbody>().Where(r => r.useGravity).ToList();
         GirlSequence();
     }
 
     private void GirlSequence()
     {
         Sequence sequence = DOTween.Sequence();
+        sequence.AppendCallback(delegate
+        {
+            _animator.SetTrigger(Crawl);
+        });
+        sequence.AppendInterval(1.2f);
         sequence.Append(transform.DOMove(m_TargetPoint1.position, 2.3f).SetEase(Ease.Linear));
     }
 

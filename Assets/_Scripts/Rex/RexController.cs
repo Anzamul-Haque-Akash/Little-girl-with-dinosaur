@@ -36,9 +36,17 @@ using UnityEngine.AI;
             
             sequence.AppendCallback(delegate
             {
+                _agent.SetDestination(m_FirstTargetPoint.position);
+            });
+            
+            float waitDuration = (m_FirstTargetPoint.position - transform.position).magnitude / _agent.speed - 0.35f;
+            sequence.AppendInterval(waitDuration);
+            
+            sequence.AppendCallback(delegate
+            {
                 _animator.SetTrigger(Roar);
             });
-            sequence.AppendInterval(2.5f);
+            sequence.AppendInterval(2f);
             sequence.AppendCallback(delegate
             {
                 _animator.SetTrigger(Eat1);

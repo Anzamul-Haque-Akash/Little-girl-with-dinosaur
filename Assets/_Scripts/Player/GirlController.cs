@@ -1,22 +1,24 @@
-using System.Collections.Generic;
-using System.Linq;
 using DG.Tweening;
 using Sirenix.OdinInspector;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class GirlController : MonoBehaviour
 {
     [SerializeField, BoxGroup("Target Points")] private Transform m_TargetPoint1;
+    [SerializeField, BoxGroup("Target Points")] private Transform m_TargetPoint2;
     [SerializeField] private Transform m_GirlMesh;
     [SerializeField] private Rigidbody m_Spine;
+    [SerializeField] private NavMeshAgent m_Agent;
     private Animator _animator;
     
     private static readonly int SeatPosition = Animator.StringToHash("SeatPosition");
     private static readonly int InMouth = Animator.StringToHash("InMouth");
     public static readonly int Toss = Animator.StringToHash("Toss");
     public static readonly int Crawl = Animator.StringToHash("Crawl");
-
+    public static readonly int Tripping = Animator.StringToHash("Tripping");
+    
     private void Awake()
     {
         _animator = GetComponentInChildren<Animator>();
@@ -30,12 +32,31 @@ public class GirlController : MonoBehaviour
     private void GirlSequence()
     {
         Sequence sequence = DOTween.Sequence();
+        
         sequence.AppendCallback(delegate
         {
-            _animator.SetTrigger(Crawl);
+            m_Agent.SetDestination(m_TargetPoint1.position);
         });
+            
+        float waitDuration = (m_TargetPoint1.position - transform.position).magnitude / m_Agent.speed - 0.35f;
+        sequence.AppendInterval(waitDuration);
+        
+        //Trip
+        sequence.AppendCallback(delegate
+        {
+            _animator.SetTrigger(Tripping);
+        });
+        
+        // sequence.AppendCallback(delegate
+        // {
+        //     _animator.SetTrigger(Crawl);
+        // });
         sequence.AppendInterval(1.2f);
-        sequence.Append(transform.DOMove(m_TargetPoint1.position, 1.3f).SetEase(Ease.Linear));
+        sequence.AppendCallback(delegate
+        {
+            m_Agent.enabled = false;
+        });
+        sequence.Append(transform.DOMove(m_TargetPoint2.position, 1.3f).SetEase(Ease.Linear));
     }
 
     public void GetEatByDino(Transform parent)

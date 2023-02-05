@@ -16,6 +16,7 @@ using UnityEngine.AI;
         private static readonly int Eat2 = Animator.StringToHash("Eat_2");
 
         private GirlController _girlController;
+        private static readonly int Hit = Animator.StringToHash("GetHit");
 
         private void Awake()
         {
@@ -69,5 +70,15 @@ using UnityEngine.AI;
         {
             _animator.SetTrigger(Eat2);
             _girlController.Tossed();
+        }
+
+        public void GetHit()
+        {
+            _animator.SetTrigger(Hit);
+        }
+        
+        public void RoarF()
+        {
+            _animator.SetTrigger(Roar);
         }
     }

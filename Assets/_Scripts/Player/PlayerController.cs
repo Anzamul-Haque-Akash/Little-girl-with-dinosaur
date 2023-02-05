@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour
         m_Teddy.DOJump(m_ThrowPoint.position, 4f, 1, 1f).OnComplete(delegate
         {
             m_Teddy.GetComponent<Rigidbody>().isKinematic = false;
+            _rexController.GetHit();
         }).SetEase(Ease.Linear);
         m_Teddy.DORotate(Vector3.up * 180f, 1f).SetEase(Ease.OutSine);
             

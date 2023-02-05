@@ -32,35 +32,27 @@ using UnityEngine.AI;
         private void TRexSequence()
         {
             Sequence sequence = DOTween.Sequence();
-
-            // sequence.AppendCallback(delegate
-            // {
-            //     _agent.SetDestination(m_FirstTargetPoint.position);
-            // });
-            //
-            // float waitDuration = (m_FirstTargetPoint.position - transform.position).magnitude / _agent.speed - 0.35f;
-            // sequence.AppendInterval(waitDuration);
+            
             sequence.AppendCallback(delegate
             {
                 _animator.SetTrigger(Roar);
-                //CameraController.Instance.SwitchToEatingCam();
             });
-            sequence.AppendInterval(2f);
+            sequence.AppendInterval(2.5f);
             sequence.AppendCallback(delegate
             {
                 _animator.SetTrigger(Eat1);
             });
-            sequence.AppendInterval(1.5f);
+            sequence.AppendInterval(.2f);
             sequence.AppendCallback(delegate
             {
                 _girlController.GetEatByDino(m_MouthTrasform);
             });
-            sequence.AppendInterval(1.2f);
+            sequence.AppendInterval(.3f);
             sequence.AppendCallback(delegate
             {
                 _animator.SetTrigger(Idle);
             });
-            sequence.AppendInterval(1f);
+            sequence.AppendInterval(.3f);
             sequence.AppendCallback(delegate
             {
                 CameraController.Instance.SwitchToPlayerCam();

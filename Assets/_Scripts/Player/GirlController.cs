@@ -35,18 +35,19 @@ public class GirlController : MonoBehaviour
             _animator.SetTrigger(Crawl);
         });
         sequence.AppendInterval(1.2f);
-        sequence.Append(transform.DOMove(m_TargetPoint1.position, 2.3f).SetEase(Ease.Linear));
+        sequence.Append(transform.DOMove(m_TargetPoint1.position, 1.3f).SetEase(Ease.Linear));
     }
 
     public void GetEatByDino(Transform parent)
     {
         _animator.SetTrigger(SeatPosition);
-        transform.parent = parent;
-        transform.localPosition = Vector3.zero;
-        transform.localRotation = quaternion.identity;
-        DOVirtual.DelayedCall(.4f, delegate
+        
+        DOVirtual.DelayedCall(.25f, delegate
         {
             _animator.SetTrigger(InMouth);
+            transform.parent = parent;
+            transform.localPosition = Vector3.zero;
+            transform.localRotation = quaternion.identity;
         });
     }
 

@@ -8,8 +8,6 @@ public class GirlController : MonoBehaviour
 {
     [SerializeField, BoxGroup("Target Points")] private Transform m_TargetPoint1;
     [SerializeField, BoxGroup("Target Points")] private Transform m_TargetPoint2;
-    [SerializeField] private Transform m_GirlMesh;
-    [SerializeField] private Rigidbody m_Spine;
     [SerializeField] private NavMeshAgent m_Agent;
     private Animator _animator;
     
@@ -66,6 +64,7 @@ public class GirlController : MonoBehaviour
         DOVirtual.DelayedCall(.25f, delegate
         {
             _animator.SetTrigger(InMouth);
+            //_animator.enabled = false;
             transform.parent = parent;
             transform.localPosition = Vector3.zero;
             transform.localRotation = quaternion.identity;

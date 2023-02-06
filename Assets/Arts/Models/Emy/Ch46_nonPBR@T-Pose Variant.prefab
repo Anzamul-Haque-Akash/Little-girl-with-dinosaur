@@ -85,12 +85,17 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: bed38a59584534f25be8ad70d76a7b1f,
         type: 3}
       propertyPath: m_Name
-      value: Ch46_nonPBR@T-Pose
+      value: Ch46_nonPBR@T-Pose Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: bed38a59584534f25be8ad70d76a7b1f,
         type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 256741d2cdb084fba85868804c4145cf, type: 2}
+    - target: {fileID: 5866666021909216657, guid: bed38a59584534f25be8ad70d76a7b1f,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bed38a59584534f25be8ad70d76a7b1f, type: 3}

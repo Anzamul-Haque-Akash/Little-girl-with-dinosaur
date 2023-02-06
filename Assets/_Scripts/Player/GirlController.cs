@@ -1,3 +1,4 @@
+using System;
 using DG.Tweening;
 using Sirenix.OdinInspector;
 using Unity.Mathematics;
@@ -9,6 +10,19 @@ public class GirlController : MonoBehaviour
     [SerializeField, BoxGroup("Target Points")] private Transform m_TargetPoint1;
     [SerializeField, BoxGroup("Target Points")] private Transform m_TargetPoint2;
     [SerializeField] private NavMeshAgent m_Agent;
+
+    [SerializeField] private Transform m_RagdollPoint;
+    [SerializeField] private Transform m_RagDollRefPoint;
+
+    public float InterpolationSpeed = 0.1f;
+
+    private void Update()
+    {
+        m_RagdollPoint.parent = null;
+        m_RagdollPoint.position = Vector3.Lerp(m_RagdollPoint.position, m_RagDollRefPoint.position, InterpolationSpeed);
+        m_RagdollPoint.rotation = Quaternion.Lerp(m_RagdollPoint.rotation, m_RagDollRefPoint.rotation, InterpolationSpeed);
+    }
+
     private Animator _animator;
     
     private static readonly int SeatPosition = Animator.StringToHash("SeatPosition");

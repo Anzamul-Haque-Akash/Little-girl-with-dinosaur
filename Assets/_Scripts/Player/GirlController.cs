@@ -64,7 +64,7 @@ public class GirlController : MonoBehaviour
         DOVirtual.DelayedCall(.25f, delegate
         {
             _animator.SetTrigger(InMouth);
-            //_animator.enabled = false;
+            _animator.enabled = false;
             transform.parent = parent;
             transform.localPosition = Vector3.zero;
             transform.localRotation = quaternion.identity;

@@ -87,8 +87,8 @@ public class GirlController : MonoBehaviour
 
     public void Tossed()
     {
-       _animator.SetTrigger(Toss);
-       DOVirtual.DelayedCall(1.5f, delegate
+       //_animator.SetTrigger(Toss);
+       DOVirtual.DelayedCall(1.1f, delegate
        {
            gameObject.SetActive(false);
            FindObjectOfType<RexController>().RoarF();

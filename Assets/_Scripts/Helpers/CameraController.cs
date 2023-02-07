@@ -53,7 +53,7 @@ public class CameraController : MonoBehaviour
         SwitchCam(m_UICam);
     }
     
-    public void SwitchToUIPlayerCam()
+    public void SwitchToShootCam()
     {
         SwitchCam(m_PlayerCam);
     }

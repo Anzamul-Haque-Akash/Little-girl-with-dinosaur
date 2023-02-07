@@ -1,4 +1,3 @@
-using System;
 using DG.Tweening;
 using JetBrains.Annotations;
 using UnityEngine;
@@ -11,20 +10,19 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform m_PickupPoint;
     [SerializeField] private Transform m_ThrowPoint;
 
+    [SerializeField] private GameObject m_Bazooka;
+    [SerializeField] private GameObject m_BazookaInWorld;
+
+    [SerializeField] private GameObject m_TeddyInWorld;
+
     private Animator _animator;
     private static readonly int Throw = Animator.StringToHash("Throw");
+    private static readonly int Bazooka = Animator.StringToHash("Bazooka");
     
     private void Awake()
     {
         Instance = this;
         _animator = GetComponent<Animator>();
-    }
-
-    [UsedImplicitly]
-    public void PickUpTeddy()
-    {
-        m_Teddy.SetParent(m_PickupPoint);
-        m_Teddy.DOMove(m_PickupPoint.position, 0.0f);
     }
 
     [UsedImplicitly]
@@ -39,7 +37,7 @@ public class PlayerController : MonoBehaviour
         }).SetEase(Ease.Linear);
         m_Teddy.DORotate(Vector3.up * 180f, 1f).SetEase(Ease.OutSine);
             
-        DOVirtual.DelayedCall(.5f, delegate
+        DOVirtual.DelayedCall(.3f, delegate
         {
             CameraController.Instance.SwitchToEatingCam();
         });
@@ -48,5 +46,25 @@ public class PlayerController : MonoBehaviour
     public void ThrowAnimation()
     {
         _animator.SetTrigger(Throw);
+    }
+
+    public void EquipBazooka()
+    {
+        _animator.SetBool(Bazooka, true);
+        m_Bazooka.SetActive(true);
+        m_BazookaInWorld.SetActive(false);
+        
+        m_Teddy.gameObject.SetActive(false);
+        m_TeddyInWorld.SetActive(true);
+    }
+
+    public void EquipTeddy()
+    {
+        m_Teddy.gameObject.SetActive(true);
+        m_TeddyInWorld.SetActive(false);
+        
+        _animator.SetBool(Bazooka, false);
+        m_Bazooka.SetActive(false);
+        m_BazookaInWorld.SetActive(true);
     }
 }

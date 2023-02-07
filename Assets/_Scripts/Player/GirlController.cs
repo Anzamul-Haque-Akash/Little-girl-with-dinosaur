@@ -1,4 +1,3 @@
-using System;
 using DG.Tweening;
 using Sirenix.OdinInspector;
 using Unity.Mathematics;
@@ -27,8 +26,6 @@ public class GirlController : MonoBehaviour
     
     private static readonly int SeatPosition = Animator.StringToHash("SeatPosition");
     private static readonly int InMouth = Animator.StringToHash("InMouth");
-    public static readonly int Toss = Animator.StringToHash("Toss");
-    public static readonly int Crawl = Animator.StringToHash("Crawl");
     public static readonly int Tripping = Animator.StringToHash("Tripping");
     
     private void Awake()
@@ -53,16 +50,11 @@ public class GirlController : MonoBehaviour
         float waitDuration = (m_TargetPoint1.position - transform.position).magnitude / m_Agent.speed - 0.35f;
         sequence.AppendInterval(waitDuration);
         
-        //Trip
         sequence.AppendCallback(delegate
         {
             _animator.SetTrigger(Tripping);
         });
         
-        // sequence.AppendCallback(delegate
-        // {
-        //     _animator.SetTrigger(Crawl);
-        // });
         sequence.AppendInterval(1.2f);
         sequence.AppendCallback(delegate
         {
@@ -87,7 +79,6 @@ public class GirlController : MonoBehaviour
 
     public void Tossed()
     {
-       //_animator.SetTrigger(Toss);
        DOVirtual.DelayedCall(1.1f, delegate
        {
            gameObject.SetActive(false);

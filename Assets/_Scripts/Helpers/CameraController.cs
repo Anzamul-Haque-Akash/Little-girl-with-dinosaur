@@ -13,6 +13,9 @@ public class CameraController : MonoBehaviour
     private CinemachineVirtualCamera m_EatingCam;
     
     [SerializeField, BoxGroup("Cinemachine VCams")]
+    private CinemachineVirtualCamera m_UICam;
+    
+    [SerializeField, BoxGroup("Cinemachine VCams")]
     private CinemachineVirtualCamera m_PlayerCam;
 
 
@@ -45,7 +48,12 @@ public class CameraController : MonoBehaviour
         SwitchCam(m_EatingCam);
     }
 
-    public void SwitchToPlayerCam()
+    public void SwitchToUIChooseCam()
+    {
+        SwitchCam(m_UICam);
+    }
+    
+    public void SwitchToUIPlayerCam()
     {
         SwitchCam(m_PlayerCam);
     }
